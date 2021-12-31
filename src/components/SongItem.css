@@ -1,0 +1,52 @@
+.song-item {
+    color: rgb(148, 163, 184);
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: 10% 50% 30% 10%;
+    padding: 10px 0px;
+}
+
+.song-item:hover {
+    background-color: rgba(65, 23, 42, 0.1);
+    /* color: rgb(03 213 225); */
+    color: #cbd5e1;
+    cursor: pointer;
+}
+
+.index {
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    grid-column: 1/2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.song-item > * {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.song-item > .name {
+    justify-content: flex-start !important;
+}
+
+.selector > svg,
+a {
+    color: inherit;
+}
+
+.selector > svg:hover {
+    color: #38bdf8;
+    filter: invert(48%) sepia(79%) saturate(1685%) hue-rotate(159deg) brightness(91%) contrast(101%);
+}
+
+.small-icon {
+    width: 16px;
+    height: 16px;
+    color: inherit;
+    filter: invert(48%) sepia(79%) saturate(1685%) hue-rotate(159deg) brightness(91%) contrast(101%);
+}

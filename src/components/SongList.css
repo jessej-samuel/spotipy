@@ -1,0 +1,7 @@
+#song-list {
+    grid-column: 5/13;
+    grid-row: 2/8;
+    overflow-y: auto;
+    height: 75vh;
+    padding-left: 20px;
+}
