@@ -9,9 +9,13 @@ const SongDetail = ({ selectedSong = null }) => {
         if (selectedSong) {
             return (
                 <>
-                    <div className="banner-container">
-                        Lol
+                    <div className="now-playing">
+                        <div id="active">
+                            <strong>Now playing</strong>
+                        </div>
+                        <div className="header">{selectedSong.name}</div>
                     </div>
+                    <div className="banner-container"></div>
                 </>
             );
         } else {

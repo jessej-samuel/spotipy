@@ -3,19 +3,30 @@
     grid-column: 1/5;
     color: #94a3b8;
     background-color: #1e293b;
-    /* display: grid;
+    display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 50% 1fr 1fr 1fr; */
-    display: flex;
+    grid-template-rows: 30% 1fr 1fr 1fr;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
 }
 
-/* .song-detail > .header {
-    grid-column: 1/3;
-} */
+.now-playing > .header {
+    font-weight: 400;
+    font-size: 1.5rem;
+}
 
-@media (max-width: 400px) {
+.now-playing {
+    grid-column: 1/3;
+    display: flex;
+    flex-direction: column;
+    padding-left: 12px;
+    padding-top: 12px;
+}
+.now-playing > *{
+    margin: 3px;
+}
+@media (max-width: 760px) {
     .song-detail {
         display: none;
     }

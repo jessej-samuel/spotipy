@@ -17,7 +17,7 @@ const Player = () => {
                     ></path>
                 </svg>
             </div>
-            <div className="control">
+            <div className="main-control">
                 <i className="fas fa-play-circle"></i>
             </div>
             <div className="control">

@@ -18,10 +18,14 @@ i.fas.fa-play-circle,
 i.fas.fa-pause-circle {
     font-size: 2rem;
 }
-
-#player:hover {
-    cursor: pointer;
+#player > .main-control > i {
+    color: #e2e8f0;
 }
+
+/* #player:hover {
+    cursor: pointer;
+} */
+
 .control > .fas:hover,
 .control > svg:hover {
     color: #e2e8f0;

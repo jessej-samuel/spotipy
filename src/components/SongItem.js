@@ -10,42 +10,35 @@ const SongItem = ({ song, index, selectSong, selectedSong }) => {
         if (hovered) {
             if (selectedSong === song) {
                 return (
-                    // <i
-                    //     className="fas fa-pause-circle"
-                    //     style={{ fontSize: "1.9rem" }}
-                    // ></i>
-                    <div>
+                    // Pause icon on playing song
+                    <div className="item-control">
                         <svg
                             height="32"
                             role="img"
                             width="32"
                             viewBox="0 0 24 24"
                             className="small-icon"
-                            fill="currentColor"
                         >
                             <rect
                                 x="5"
                                 y="3"
                                 width="4"
                                 height="18"
-                                fill="#38bdf8"
+                                fill="currentColor"
                             ></rect>
                             <rect
                                 x="15"
                                 y="3"
                                 width="4"
                                 height="18"
-                                fill="#38bdf8"
+                                fill="currentColor"
                             ></rect>
                         </svg>
                     </div>
                 );
             }
             return (
-                // <i
-                //     className="fas fa-play-circle"
-                //     style={{ fontSize: "1.9rem" }}
-                // ></i>
+                // Play icon
                 <div>
                     <svg
                         height="32"
@@ -56,7 +49,7 @@ const SongItem = ({ song, index, selectSong, selectedSong }) => {
                     >
                         <polygon
                             points="21.57 12 5.98 3 5.98 21 21.57 12"
-                            fill="#38bdf8"
+                            fill="currentColor"
                         ></polygon>
                     </svg>
                 </div>

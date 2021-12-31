@@ -2,6 +2,12 @@
     grid-column: 5/13;
     grid-row: 2/8;
     overflow-y: auto;
+    overflow-x: hidden;
     height: 75vh;
     padding-left: 20px;
+}
+@media (max-width: 760px) {
+    #song-list {
+        grid-column: 1/13;
+    }
 }
