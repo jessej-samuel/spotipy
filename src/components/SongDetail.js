@@ -1,10 +1,8 @@
 import "./SongDetail.css";
 import { connect } from "react-redux";
-import { useEffect } from "react";
+import { selectSong } from "../actions";
 
-const SongDetail = ({ selectedSong = null }) => {
-    useEffect(() => {});
-
+const SongDetail = ({ selectedSong = null, defaultSong, selectSong }) => {
     const songData = () => {
         if (selectedSong) {
             return (
@@ -15,10 +13,10 @@ const SongDetail = ({ selectedSong = null }) => {
                         </div>
                         <div className="header">{selectedSong.name}</div>
                     </div>
-                    <div className="banner-container"></div>
                 </>
             );
         } else {
+            selectSong(defaultSong);
             return null;
         }
     };
@@ -29,7 +27,8 @@ const SongDetail = ({ selectedSong = null }) => {
 const mapStateToProps = (state) => {
     return {
         selectedSong: state.selectedSong,
+        defaultSong: state.songs[0],
     };
 };
 
-export default connect(mapStateToProps)(SongDetail);
+export default connect(mapStateToProps, { selectSong: selectSong })(SongDetail);

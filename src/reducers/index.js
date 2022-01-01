@@ -12,7 +12,15 @@ const selectedSongsReducer = (selectedSong = null, action) => {
     return selectedSong;
 };
 
+const playerStateReducer = (playerState = 0, action) => {
+    if (action.type === "PLAYER_STATE_SELECTED") {
+        return (playerState + 1) % 2;
+    }
+    return playerState;
+};
+
 export default combineReducers({
     songs: songsReducer,
     selectedSong: selectedSongsReducer,
+    playerState: playerStateReducer,
 });

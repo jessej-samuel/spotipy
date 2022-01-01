@@ -3,12 +3,12 @@ import "./SongItem.css";
 import { connect } from "react-redux";
 import { selectSong } from "../actions";
 
-const SongItem = ({ song, index, selectSong, selectedSong }) => {
+const SongItem = ({ song, index, selectSong, selectedSong, playerState }) => {
     const [hovered, setHovered] = useState(false);
 
     const selector = () => {
         if (hovered) {
-            if (selectedSong === song) {
+            if (selectedSong === song && playerState) {
                 return (
                     // Pause icon on playing song
                     <div className="item-control">
@@ -64,7 +64,7 @@ const SongItem = ({ song, index, selectSong, selectedSong }) => {
 
     // set the gif
     const phaser = () => {
-        if (selectedSong === song) {
+        if (selectedSong === song && playerState) {
             return (
                 <div className="index">
                     <img alt="" src="/playing.gif" className="small-icon" />
@@ -93,6 +93,7 @@ const SongItem = ({ song, index, selectSong, selectedSong }) => {
 const mapStateToProps = (state) => {
     return {
         selectedSong: state.selectedSong,
+        playerState: state.playerState,
     };
 };
 

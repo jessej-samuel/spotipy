@@ -4,3 +4,9 @@ export const selectSong = (song) => {
         payload: song,
     };
 };
+
+export const setPlayerState = () => {
+    return {
+        type: "PLAYER_STATE_SELECTED",
+    };
+};
