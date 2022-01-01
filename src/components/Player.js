@@ -23,7 +23,7 @@ const Player = ({ selectedSong, defaultSong, playerState }) => {
     return (
         <div id="player">
             <div className="control">{backwardsSvg}</div>
-            <div className="main-control" onClick={onMusicPlay}>
+            <div className="main-control control" onClick={onMusicPlay}>
                 <i
                     className={`fas fa-${
                         playerState ? "pause" : "play"
