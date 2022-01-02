@@ -49,6 +49,7 @@ const Player = ({
         dispatch({ type: "PLAYER_STATE_SELECTED", payload: 1 });
         audioRef.current.play();
         document.getElementById("focus-link").click();
+        window.history.pushState({},'','/')
     }, [selectedSongId, dispatch]);
     useEffect(() => {
         dispatch({ type: "PLAYER_STATE_SELECTED", payload: 0 });
