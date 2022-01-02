@@ -77,7 +77,7 @@ const Player = ({
                 preload="true"
                 onEnded={() => selectSongById(selectedSongId + 1)}
                 ref={audioRef}
-                // hidden
+                hidden
             >
                 Your browser does not support the
                 <code>audio</code> element.
