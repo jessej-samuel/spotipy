@@ -6,9 +6,19 @@ import reducers from "./reducers";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 
-ReactDOM.render(
-    <Provider store={createStore(reducers,window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())}>
-        <App />
-    </Provider>,
-    document.getElementById("root")
-);
+const rooty = () => {
+    
+    return (
+        <Provider
+            store={createStore(
+                reducers,
+                window.__REDUX_DEVTOOLS_EXTENSION__ &&
+                    window.__REDUX_DEVTOOLS_EXTENSION__()
+            )}
+        >
+            <App />
+        </Provider>
+    );
+};
+
+ReactDOM.render(rooty(), document.getElementById("root"));

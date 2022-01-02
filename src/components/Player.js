@@ -47,7 +47,12 @@ const Player = ({
         console.log("running ;-;");
         dispatch({ type: "PLAYER_STATE_SELECTED", payload: 1 });
         audioRef.current.play();
-    }, [selectedSongId]);
+    }, [selectedSongId, dispatch]);
+    useEffect(() => {
+        console.log("running ;-;");
+        dispatch({ type: "PLAYER_STATE_SELECTED", payload: 0 });
+        audioRef.current.pause();
+    }, [dispatch]);
 
     return (
         <div id="player">
