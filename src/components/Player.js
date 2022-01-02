@@ -25,6 +25,7 @@ const Player = ({
 
         if (!playerState) {
             audioRef.current.play();
+
             dispatch({ type: "PLAYER_STATE_SELECTED", payload: 1 });
         } else {
             audioRef.current.pause();
@@ -74,8 +75,9 @@ const Player = ({
                 controls
                 src={songs[selectedSongId].url}
                 preload="true"
+                onEnded={() => selectSongById(selectedSongId + 1)}
                 ref={audioRef}
-                hidden
+                // hidden
             >
                 Your browser does not support the
                 <code>audio</code> element.
