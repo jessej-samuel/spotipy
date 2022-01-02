@@ -2,6 +2,11 @@
     grid-row: 2/3;
     grid-column: 5/13;
     border-bottom: 1px solid #94a3b8;
+    /* margin-left: 20px; */
+}
+
+.song-item.header > * {
+    text-align: center;
 }
 
 @media (max-width: 760px) {
