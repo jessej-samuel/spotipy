@@ -11,3 +11,18 @@
         grid-column: 1/13;
     }
 }
+
+.song-item.header {
+    border-bottom: 1px solid #94a3b8;
+    padding: 5px 0px;
+}
+
+.song-item.header:hover {
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background-color: initial;
+}
+
+.song-item.header > * {
+    color: #eee !important;
+}

@@ -5,8 +5,16 @@ export const selectSong = (song) => {
     };
 };
 
-export const setPlayerState = () => {
+export const selectSongById = (id) => {
+    return {
+        type: "SONG_SELECTED_BY_ID",
+        payload: id,
+    };
+};
+
+export const setPlayerState = (val) => {
     return {
         type: "PLAYER_STATE_SELECTED",
+        payload: val
     };
 };

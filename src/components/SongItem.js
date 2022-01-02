@@ -1,70 +1,34 @@
 import { useState } from "react";
 import "./SongItem.css";
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 import { selectSong } from "../actions";
 
-const SongItem = ({ song, index, selectSong, selectedSong, playerState }) => {
+const SongItem = ({ song, index, selectSong, selectedSongId, playerState }) => {
     const [hovered, setHovered] = useState(false);
+    const dispatch = useDispatch();
 
     const selector = () => {
-        if (hovered) {
-            if (selectedSong === song && playerState) {
-                return (
-                    // Pause icon on playing song
-                    <div className="item-control">
-                        <svg
-                            height="32"
-                            role="img"
-                            width="32"
-                            viewBox="0 0 24 24"
-                            className="small-icon"
-                        >
-                            <rect
-                                x="5"
-                                y="3"
-                                width="4"
-                                height="18"
-                                fill="currentColor"
-                            ></rect>
-                            <rect
-                                x="15"
-                                y="3"
-                                width="4"
-                                height="18"
-                                fill="currentColor"
-                            ></rect>
-                        </svg>
-                    </div>
-                );
-            }
-            return (
-                // Play icon
-                <div>
-                    <svg
-                        height="32"
-                        role="img"
-                        width="32"
-                        viewBox="0 0 24 24"
-                        className="small-icon"
-                    >
-                        <polygon
-                            points="21.57 12 5.98 3 5.98 21 21.57 12"
-                            fill="currentColor"
-                        ></polygon>
-                    </svg>
-                </div>
-            );
-        } else {
-            return <a href={song.url}>Link</a>;
-        }
+        return (
+            <a draggable="false" href={song.url}>
+                <svg
+                    role="img"
+                    height="24"
+                    width="24"
+                    viewBox="0 0 24 24"
+                    className="download-link"
+                >
+                    <path d="M11.5 0C5.149 0 0 5.148 0 11.5 0 17.851 5.149 23 11.5 23S23 17.851 23 11.5C23 5.148 17.851 0 11.5 0zm0 22C5.71 22 1 17.29 1 11.5S5.71 1 11.5 1 22 5.71 22 11.5 17.29 22 11.5 22zm.499-6.842V5h-1v10.149l-3.418-3.975-.758.652 4.678 5.44 4.694-5.439-.757-.653-3.439 3.984z" fill="currentColor"></path>
+                </svg>
+            </a>
+        );
     };
 
     // Set song as active
-    const now_selected = selectedSong === song ? "active" : "";
+    const now_selected = selectedSongId === song.id ? "active" : "";
 
     // set the gif
     const phaser = () => {
-        if (selectedSong === song && playerState) {
+        if (selectedSongId === song.id && playerState) {
             return (
                 <div className="index">
                     <img alt="" src="/playing.gif" className="small-icon" />
@@ -80,7 +44,10 @@ const SongItem = ({ song, index, selectSong, selectedSong, playerState }) => {
             id={now_selected}
             onMouseOver={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
-            onClick={() => selectSong(song)}
+            onClick={() => {
+                selectSong(song);
+                dispatch({ type: "PLAYER_STATE_SELECTED", payload: 1 });
+            }}
         >
             {phaser()}
             <div className="name">{song.name}</div>
@@ -92,7 +59,7 @@ const SongItem = ({ song, index, selectSong, selectedSong, playerState }) => {
 
 const mapStateToProps = (state) => {
     return {
-        selectedSong: state.selectedSong,
+        selectedSongId: state.selectedSongId,
         playerState: state.playerState,
     };
 };

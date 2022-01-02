@@ -1,28 +1,57 @@
 import "./Player.css";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { connect, useDispatch } from "react-redux";
 import { forwardsSvg, backwardsSvg } from "../svg";
-import { setPlayerState } from "../actions";
+import { setPlayerState, selectSongById } from "../actions";
 
-const Player = ({ selectedSong, defaultSong, playerState }) => {
+const Player = ({
+    selectedSongId,
+    defaultSong,
+    playerState,
+    songs,
+    selectSongById,
+}) => {
     const dispatch = useDispatch();
     const audioRef = useRef();
-    if (!selectedSong) {
-        selectedSong = defaultSong;
+    if (selectedSongId < 0 || selectedSongId >= songs.length - 1) {
+        selectedSongId = defaultSong.id;
     }
+    if (audioRef.current) {
+        audioRef.current.volume = 0.01;
+    }
+
     const onMusicPlay = (e) => {
         e.preventDefault();
+
         if (!playerState) {
             audioRef.current.play();
+            dispatch({ type: "PLAYER_STATE_SELECTED", payload: 1 });
         } else {
             audioRef.current.pause();
+            dispatch({ type: "PLAYER_STATE_SELECTED", payload: 0 });
         }
-        dispatch({ type: "PLAYER_STATE_SELECTED" });
     };
+
+    const onBackwardClick = () => {
+        if (selectedSongId > 0) {
+            selectSongById(selectedSongId - 1);
+        }
+    };
+    const onForwardClick = () => {
+        if (selectedSongId < songs.length - 1) {
+            selectSongById(selectedSongId + 1);
+        }
+    };
+
+    useEffect(() => {
+        audioRef.current.play();
+    }, [selectedSongId]);
 
     return (
         <div id="player">
-            <div className="control">{backwardsSvg}</div>
+            <div className="control" onClick={onBackwardClick}>
+                {backwardsSvg}
+            </div>
             <div className="main-control control" onClick={onMusicPlay}>
                 <i
                     className={`fas fa-${
@@ -30,11 +59,13 @@ const Player = ({ selectedSong, defaultSong, playerState }) => {
                     }-circle`}
                 ></i>
             </div>
-            <div className="control">{forwardsSvg}</div>
+            <div className="control" onClick={onForwardClick}>
+                {forwardsSvg}
+            </div>
             <audio
                 id="main-track"
                 controls
-                src={selectedSong.url}
+                src={songs[selectedSongId].url}
                 preload="true"
                 ref={audioRef}
                 hidden
@@ -49,12 +80,13 @@ const Player = ({ selectedSong, defaultSong, playerState }) => {
 const mapStateToProps = (state) => {
     console.log(state);
     return {
-        selectedSong: state.selectedSong,
+        selectedSongId: state.selectedSongId,
         defaultSong: state.songs[0],
         playerState: state.playerState,
+        songs: state.songs,
     };
 };
 
-export default connect(mapStateToProps, { setPlayerState: setPlayerState })(
+export default connect(mapStateToProps, { setPlayerState, selectSongById })(
     Player
 );

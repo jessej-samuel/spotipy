@@ -5,22 +5,27 @@ const songsReducer = () => {
     return songs;
 };
 
-const selectedSongsReducer = (selectedSong = null, action) => {
+const selectedSongIdReducer = (selectedSongId = 0, action) => {
     if (action.type === "SONG_SELECTED") {
+        return action.payload.id;
+    }
+    if (action.type === "SONG_SELECTED_BY_ID") {
         return action.payload;
     }
-    return selectedSong;
+    return selectedSongId;
 };
 
 const playerStateReducer = (playerState = 0, action) => {
-    if (action.type === "PLAYER_STATE_SELECTED") {
+    if (action.type === "PLAYER_STATE_SELECTED" && !action.payload) {
         return (playerState + 1) % 2;
+    } else if (action.type === "PLAYER_STATE_SELECTED" && action.payload) {
+        return action.payload;
     }
     return playerState;
 };
 
 export default combineReducers({
     songs: songsReducer,
-    selectedSong: selectedSongsReducer,
+    selectedSongId: selectedSongIdReducer,
     playerState: playerStateReducer,
 });

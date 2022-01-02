@@ -29,6 +29,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    color: inherit;
 }
 
 .song-item > .name {
@@ -38,6 +39,12 @@
 .item-control > svg,
 a {
     color: inherit;
+}
+a >svg {
+    color: inherit;
+}
+a > svg:hover {
+    color: #eee;
 }
 
 .selector > svg:hover {
@@ -49,4 +56,8 @@ a {
     height: 16px;
     color: inherit;
     margin: 0px;
+}
+
+.song-item.header > * > * {
+    color: inherit;
 }

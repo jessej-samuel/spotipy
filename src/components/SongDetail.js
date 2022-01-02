@@ -2,16 +2,23 @@ import "./SongDetail.css";
 import { connect } from "react-redux";
 import { selectSong } from "../actions";
 
-const SongDetail = ({ selectedSong = null, defaultSong, selectSong }) => {
+const SongDetail = ({
+    selectedSongId = -1,
+    defaultSong,
+    selectSong,
+    songs,
+}) => {
     const songData = () => {
-        if (selectedSong) {
+        if (selectedSongId >= 0) {
             return (
                 <>
                     <div className="now-playing">
                         <div id="active">
                             <strong>Now playing</strong>
                         </div>
-                        <div className="header">{selectedSong.name}</div>
+                        <div className="header">
+                            {songs[selectedSongId].name}
+                        </div>
                     </div>
                 </>
             );
@@ -26,8 +33,9 @@ const SongDetail = ({ selectedSong = null, defaultSong, selectSong }) => {
 
 const mapStateToProps = (state) => {
     return {
-        selectedSong: state.selectedSong,
+        selectedSongId: state.selectedSongId,
         defaultSong: state.songs[0],
+        songs: state.songs,
     };
 };
 
