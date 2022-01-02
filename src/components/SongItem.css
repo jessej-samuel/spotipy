@@ -4,13 +4,12 @@
     height: fit-content;
     display: grid;
     grid-template-columns: 10% 50% 30% 10%;
-    padding: 10px 0px;
+    padding-top: 20px;
 }
 
 .song-item:hover {
     background-color: #1e293b;
     border-radius: 4px;
-    /* color: rgb(03 213 225); */
     color: #cbd5e1;
     cursor: default;
 }
