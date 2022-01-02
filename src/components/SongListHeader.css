@@ -1,0 +1,13 @@
+.song-item.header {
+    grid-row: 2/3;
+    grid-column: 5/13;
+    border-bottom: 1px solid #94a3b8;
+    padding: 5px 0px;
+    top: 2px;
+}
+
+@media (max-width: 760px) {
+    .song-item.header {
+        grid-column: 1/13;
+    }
+}

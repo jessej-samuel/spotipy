@@ -1,6 +1,6 @@
 #song-list {
     grid-column: 5/13;
-    grid-row: 2/8;
+    grid-row: 3/8;
     overflow-y: auto;
     overflow-x: hidden;
     height: 75vh;
@@ -12,10 +12,7 @@
     }
 }
 
-.song-item.header {
-    border-bottom: 1px solid #94a3b8;
-    padding: 5px 0px;
-}
+
 
 .song-item.header:hover {
     border-bottom-right-radius: 0px;
