@@ -44,6 +44,8 @@ const Player = ({
     };
 
     useEffect(() => {
+        console.log("running ;-;");
+        dispatch({ type: "PLAYER_STATE_SELECTED", payload: 1 });
         audioRef.current.play();
     }, [selectedSongId]);
 

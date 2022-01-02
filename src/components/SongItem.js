@@ -4,7 +4,7 @@ import { connect, useDispatch } from "react-redux";
 import { selectSong } from "../actions";
 
 const SongItem = ({ song, index, selectSong, selectedSongId, playerState }) => {
-    const [hovered, setHovered] = useState(false);
+    const [, setHovered] = useState(false);
     const dispatch = useDispatch();
 
     const selector = () => {

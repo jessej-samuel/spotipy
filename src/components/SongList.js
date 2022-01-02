@@ -1,9 +1,7 @@
 import "./SongList.css";
 import SongItem from "./SongItem";
-import { useDispatch } from "react-redux";
 
 const SongList = ({ songs = [] }) => {
-    const dispatch = useDispatch();
     const songTags = songs.map((song, index) => {
         return <SongItem song={song} key={index} index={index} />;
     });
@@ -14,7 +12,7 @@ const SongList = ({ songs = [] }) => {
                 <div className="name">Title</div>
                 <div className="author">Author</div>
                 <div className="selector">
-                <i class="fas fa-chevron-down"></i>
+                    <i class="fas fa-chevron-down"></i>
                 </div>
             </div>
 
