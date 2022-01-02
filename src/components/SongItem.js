@@ -1,8 +1,7 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import "./SongItem.css";
 import { connect, useDispatch } from "react-redux";
 import { selectSong } from "../actions";
-import { _ref } from "./App";
 
 const SongItem = ({ song, index, selectSong, selectedSongId, playerState }) => {
     const [, setHovered] = useState(false);
@@ -29,7 +28,6 @@ const SongItem = ({ song, index, selectSong, selectedSongId, playerState }) => {
 
     // Set song as active
     const now_selected = selectedSongId === song.id ? "active" : "";
-
 
     // set the gif
     const phaser = () => {

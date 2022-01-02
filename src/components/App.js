@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import "./App.css";
 import NavBar from "./NavBar";
 import Player from "./Player";
@@ -20,7 +20,9 @@ const App = () => {
             <SongDetail />
             <SongList songs={songs} />
             <Player />
-            <a href="#focused" id="focus-link" />
+            <a href="#focused" id="focus-link" hidden>
+                Go to playing element
+            </a>
         </React.Fragment>
     );
 };
