@@ -2,7 +2,7 @@ import "./Player.css";
 import { useEffect, useRef, useState } from "react";
 import { connect, useDispatch } from "react-redux";
 import { forwardsSvg, backwardsSvg, shuffleSvg } from "../svg";
-import { setPlayerState, selectSongById, setDuration } from "../actions";
+import { setPlayerState, selectSongById } from "../actions";
 import Progress from "./ProgressBar";
 import SongTime from "./SongTime";
 
@@ -16,8 +16,8 @@ const Player = ({
 }) => {
     const dispatch = useDispatch();
     const [shuffled, setShuffled] = useState(false);
-    const [audioData, setAudioData] = useState({});
     const audioRef = useRef();
+    
     if (selectedSongId < 0 || selectedSongId >= songs.length - 1) {
         selectedSongId = defaultSong.id;
     }
@@ -108,9 +108,8 @@ const Player = ({
                         type: "SET_DURATION",
                         payload: audioRef.current.duration,
                     });
-                    
+
                     setInterval(() => {
-                        
                         dispatch({
                             type: "SET_CURRENT_LOCATION",
                             payload: audioRef.current.currentTime,

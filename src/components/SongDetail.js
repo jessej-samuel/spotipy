@@ -11,16 +11,12 @@ const SongDetail = ({
     const songData = () => {
         if (selectedSongId >= 0) {
             return (
-                <>
-                    <div className="now-playing">
-                        <div id="active">
-                            <strong>Now playing</strong>
-                        </div>
-                        <div className="header">
-                            {songs[selectedSongId].name}
-                        </div>
+                <div className="now-playing">
+                    <div id="active">
+                        <strong>Now playing</strong>
                     </div>
-                </>
+                    <div className="header">{songs[selectedSongId].name}</div>
+                </div>
             );
         } else {
             selectSong(defaultSong);
