@@ -2,7 +2,7 @@ import "./Player.css";
 import { useEffect, useRef, useState } from "react";
 import { connect, useDispatch } from "react-redux";
 import { forwardsSvg, backwardsSvg, shuffleSvg } from "../svg";
-import { setPlayerState, selectSongById } from "../actions";
+import { setPlayerState, selectSongById, setDuration } from "../actions";
 import Progress from "./ProgressBar";
 import SongTime from "./SongTime";
 
@@ -12,28 +12,27 @@ const Player = ({
     playerState,
     songs,
     selectSongById,
-    volume
+    volume,
 }) => {
     const dispatch = useDispatch();
     const [shuffled, setShuffled] = useState(false);
+    const [audioData, setAudioData] = useState({});
     const audioRef = useRef();
     if (selectedSongId < 0 || selectedSongId >= songs.length - 1) {
         selectedSongId = defaultSong.id;
     }
-    
+
     useEffect(() => {
         if (audioRef.current) {
-            audioRef.current.volume = volume/500;
+            audioRef.current.volume = volume / 500;
         }
-    }, [volume])
-
+    }, [volume]);
 
     const onMusicPlay = (e) => {
         e.preventDefault();
 
         if (!playerState) {
             audioRef.current.play();
-
             dispatch({ type: "PLAYER_STATE_SELECTED", payload: 1 });
         } else {
             audioRef.current.pause();
@@ -55,6 +54,7 @@ const Player = ({
     useEffect(() => {
         dispatch({ type: "PLAYER_STATE_SELECTED", payload: 1 });
         audioRef.current.play();
+        console.log(audioRef.current.duration);
         document.getElementById("focus-link").click();
         window.history.pushState({}, "", "/");
     }, [selectedSongId, dispatch]);
@@ -103,6 +103,20 @@ const Player = ({
                             : selectedSongId + 1
                     );
                 }}
+                onLoadedMetadata={() => {
+                    dispatch({
+                        type: "SET_DURATION",
+                        payload: audioRef.current.duration,
+                    });
+                    
+                    setInterval(() => {
+                        
+                        dispatch({
+                            type: "SET_CURRENT_LOCATION",
+                            payload: audioRef.current.currentTime,
+                        });
+                    }, 1000);
+                }}
                 ref={audioRef}
                 hidden
             >
@@ -114,7 +128,6 @@ const Player = ({
 };
 
 const mapStateToProps = (state) => {
-    console.log(state);
     return {
         selectedSongId: state.selectedSongId,
         defaultSong: state.songs[0],

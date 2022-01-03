@@ -31,9 +31,25 @@ const volumeReducer = (volume = 100, action) => {
     return volume;
 };
 
+const durationReducer = (duration = 0, action) => {
+    if (action.type === "SET_DURATION") {
+        return action.payload;
+    }
+    return duration;
+};
+
+const currentLocationReducer = (loc = 0, action) => {
+    if (action.type === "SET_CURRENT_LOCATION") {
+        return action.payload;
+    }
+    return loc;
+};
+
 export default combineReducers({
     songs: songsReducer,
     selectedSongId: selectedSongIdReducer,
     playerState: playerStateReducer,
     volume: volumeReducer,
+    duration: durationReducer,
+    currentLocation: currentLocationReducer,
 });

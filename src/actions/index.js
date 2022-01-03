@@ -25,3 +25,17 @@ export const setVolume = (val) => {
         payload: val,
     };
 };
+
+export const setDuration = (val) => {
+    return {
+        type: "SET_DURATION",
+        payload: val,
+    };
+};
+
+export const setCurrentLocation = (val) => {
+    return {
+        type: "SET_CURRENT_LOCATION",
+        payload: val,
+    };
+};
