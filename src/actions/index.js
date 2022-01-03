@@ -15,6 +15,13 @@ export const selectSongById = (id) => {
 export const setPlayerState = (val) => {
     return {
         type: "PLAYER_STATE_SELECTED",
-        payload: val
+        payload: val,
+    };
+};
+
+export const setVolume = (val) => {
+    return {
+        type: "SET_VOLUME",
+        payload: val,
     };
 };

@@ -3,6 +3,8 @@ import { useEffect, useRef, useState } from "react";
 import { connect, useDispatch } from "react-redux";
 import { forwardsSvg, backwardsSvg, shuffleSvg } from "../svg";
 import { setPlayerState, selectSongById } from "../actions";
+import Progress from "./ProgressBar";
+import SongTime from "./SongTime";
 
 const Player = ({
     selectedSongId,
@@ -10,6 +12,7 @@ const Player = ({
     playerState,
     songs,
     selectSongById,
+    volume
 }) => {
     const dispatch = useDispatch();
     const [shuffled, setShuffled] = useState(false);
@@ -17,9 +20,13 @@ const Player = ({
     if (selectedSongId < 0 || selectedSongId >= songs.length - 1) {
         selectedSongId = defaultSong.id;
     }
-    if (audioRef.current) {
-        audioRef.current.volume = 0.01;
-    }
+    
+    useEffect(() => {
+        if (audioRef.current) {
+            audioRef.current.volume = volume/500;
+        }
+    }, [volume])
+
 
     const onMusicPlay = (e) => {
         e.preventDefault();
@@ -49,7 +56,7 @@ const Player = ({
         dispatch({ type: "PLAYER_STATE_SELECTED", payload: 1 });
         audioRef.current.play();
         document.getElementById("focus-link").click();
-        window.history.pushState({},'','/')
+        window.history.pushState({}, "", "/");
     }, [selectedSongId, dispatch]);
     useEffect(() => {
         dispatch({ type: "PLAYER_STATE_SELECTED", payload: 0 });
@@ -81,6 +88,8 @@ const Player = ({
             <div className="control" onClick={onForwardClick}>
                 {forwardsSvg}
             </div>
+            <Progress />
+            <SongTime />
 
             <audio
                 id="main-track"
@@ -111,6 +120,7 @@ const mapStateToProps = (state) => {
         defaultSong: state.songs[0],
         playerState: state.playerState,
         songs: state.songs,
+        volume: state.volume,
     };
 };
 

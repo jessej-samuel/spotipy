@@ -24,8 +24,16 @@ const playerStateReducer = (playerState = 0, action) => {
     return playerState;
 };
 
+const volumeReducer = (volume = 100, action) => {
+    if (action.type === "SET_VOLUME") {
+        return action.payload;
+    }
+    return volume;
+};
+
 export default combineReducers({
     songs: songsReducer,
     selectedSongId: selectedSongIdReducer,
     playerState: playerStateReducer,
+    volume: volumeReducer,
 });
