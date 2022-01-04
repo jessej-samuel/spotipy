@@ -25,14 +25,14 @@
     appearance: none;
     width: 8px; /* Set a specific slider handle width */
     height: 8px; /* Slider handle height */
-    background: #38bdf8; /* Green background */
+    background: #2a8eb9; /* Green background */
     border-radius: 9999px;
 }
 
 .slider::-moz-range-thumb {
     width: 4px; /* Set a specific slider handle width */
     height: 4px; /* Slider handle height */
-    background: #04aa6d; /* Green background */
+    background: #2a8eb9; /* Green background */
     border-radius: 9999px;
 }
 

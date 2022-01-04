@@ -1,13 +1,13 @@
 .music-timer {
     width: 100%;
     height: 4px;
-    background-color: #1e293b;
+    background-color: #141414;
     grid-row: 9/10;
 }
 
 .completed {
     height: 4px;
     width: 60%;
-    background-color: #38bdf8;
+    background-color: #2a8eb9;
     
 }
