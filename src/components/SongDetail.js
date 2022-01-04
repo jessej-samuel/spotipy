@@ -21,11 +21,19 @@ const SongDetail = ({
                         </div>
                     </div>
                     <div className="album-img">
-                        <img src={songs[selectedSongId].links.images[1].url} />
+                        <img
+                            src={songs[selectedSongId].links.images[1].url}
+                            alt={songs[selectedSongId].name}
+                        />
                     </div>
                     <div className="artist-img">
-                        <img src={songs[selectedSongId].links.images[0].url} />
-                        <p className="artist-name">{ songs[selectedSongId].author}</p>
+                        <img
+                            src={songs[selectedSongId].links.images[0].url}
+                            alt={songs[selectedSongId].author}
+                        />
+                        <p className="artist-name">
+                            {songs[selectedSongId].author}
+                        </p>
                     </div>
                 </>
             );
