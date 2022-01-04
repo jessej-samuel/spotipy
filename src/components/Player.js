@@ -17,9 +17,9 @@ const Player = ({
     const dispatch = useDispatch();
     const [shuffled, setShuffled] = useState(false);
     const audioRef = useRef();
-    
-    if (selectedSongId < 0 || selectedSongId >= songs.length - 1) {
-        selectedSongId = defaultSong.id;
+
+    if (selectedSongId < 0 || selectedSongId > songs.length - 1) {
+        selectSongById(0);
     }
 
     useEffect(() => {
