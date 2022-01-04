@@ -23,7 +23,7 @@
     padding-left: 12px;
     padding-top: 12px;
 }
-.now-playing > *{
+.now-playing > * {
     margin: 3px;
 }
 @media (max-width: 760px) {
@@ -33,6 +33,42 @@
 }
 
 .song-detail > div {
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
+}
+
+.album-img {
+    grid-row: 2/4;
+    grid-column: 1/3;
+    height: 100%;
+    width: 100%;
+    /* background-color: red; */
+    display: flex;
+    justify-content: center;
+}
+
+.artist-img {
+    grid-row: 4/5;
+    grid-column: 1/3;
+    /* height: 100%; */
+    width: 100%;
+    /* border-radius: 9999px; */
+    /* background-color: yellow; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.album-img > img {
+    /* width: 100%; */
+    height: 100%;
+}
+.artist-img > img {
+    height: 64px;
+    border-radius: 1000%;
+}
+
+.artist-img > .artist-name {
+    color: aliceblue;
 }
