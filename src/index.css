@@ -31,3 +31,17 @@ code {
 #active {
     color: #38bdf8;
 }
+
+#resolution-warning {
+    font-weight: 400;
+    font-size: 1.6rem;
+    display: none;
+}
+@media (max-width: 720px) {
+    #root {
+        display: none;
+    }
+    #resolution-warning {
+        display: block;
+    }
+}
