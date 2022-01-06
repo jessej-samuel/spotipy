@@ -1,5 +1,5 @@
 import "./Player.css";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { connect, useDispatch } from "react-redux";
 import { forwardsSvg, backwardsSvg, shuffleSvg } from "../svg";
 import { setPlayerState, selectSongById } from "../actions";
@@ -17,6 +17,26 @@ const Player = ({
     const dispatch = useDispatch();
     const [shuffled, setShuffled] = useState(false);
     const audioRef = useRef();
+    let clicked = false;
+
+    const spaceDownFunc = (event) => {
+        if (event.keyCode === 32 && !clicked) {
+            console.log("space pressed");
+            clicked = true;
+            document.getElementsByClassName("main-control")[0].click();
+        }
+    };
+    const spaceUpFunc = (event) => {
+        if (event.keyCode === 32 && clicked) {
+            console.log("space upped");
+            clicked = false;
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener("keydown", spaceDownFunc);
+        document.addEventListener("keyup", spaceUpFunc);
+    }, []);
 
     if (selectedSongId < 0 || selectedSongId > songs.length - 1) {
         selectSongById(0);
