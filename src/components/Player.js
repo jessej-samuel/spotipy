@@ -54,7 +54,7 @@ const Player = ({
     useEffect(() => {
         dispatch({ type: "PLAYER_STATE_SELECTED", payload: 1 });
         audioRef.current.play();
-        console.log(audioRef.current.duration);
+        // console.log(audioRef.current.duration);
         document.getElementById("focus-link").click();
         window.history.pushState({}, "", "/");
     }, [selectedSongId, dispatch]);
@@ -70,7 +70,7 @@ const Player = ({
                 id={shuffled ? `active` : null}
                 onClick={() => {
                     setShuffled(!shuffled);
-                    console.log("shuffle: " + !shuffled);
+                    // console.log("shuffle: " + !shuffled);
                 }}
             >
                 {shuffleSvg}
