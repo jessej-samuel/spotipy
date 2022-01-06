@@ -21,14 +21,12 @@ const Player = ({
 
     const spaceDownFunc = (event) => {
         if (event.keyCode === 32 && !clicked) {
-            console.log("space pressed");
             clicked = true;
             document.getElementsByClassName("main-control")[0].click();
         }
     };
     const spaceUpFunc = (event) => {
         if (event.keyCode === 32 && clicked) {
-            console.log("space upped");
             clicked = false;
         }
     };
