@@ -22,3 +22,15 @@ i.fa-spotify {
     color: white;
     font-size: 2rem;
 }
+
+.nav-links {
+    position: absolute;
+    right: 1rem;
+    font-size: 1.8rem;
+    color: white;
+}
+
+.nav-links > a > i:hover {
+    cursor: pointer;
+    color: #38bdf8;
+}

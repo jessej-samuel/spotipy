@@ -7,6 +7,11 @@ const NavBar = () => {
         <div className="navbar">
             <i className="fab fa-spotify"></i>
             <div className="app-header">{metadata.appName}</div>
+            <div className="nav-links">
+                <a href="https://www.github.com/jessej-samuel/spotipy">
+                    <i className="fab fa-github"></i>
+                </a>
+            </div>
         </div>
     );
 };
