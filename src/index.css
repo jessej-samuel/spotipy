@@ -25,7 +25,7 @@ code {
     background-color: rgb(15, 23, 42);
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(8, 1fr) 4px;
+    grid-template-rows: repeat(8, 1fr);
 }
 
 #active {
