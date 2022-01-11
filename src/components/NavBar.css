@@ -1,36 +1,37 @@
 .navbar {
-    background-color: rgb(20, 20, 20);
-    color: white;
-    top: 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    position: sticky;
-    grid-column: 1/13;
-    box-shadow: 0px 2px 2px rgb(10, 10, 10);
+  background-color: rgb(20, 20, 20);
+  color: white;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: sticky;
+  grid-column: 1/13;
+  box-shadow: 0px 2px 2px rgb(10, 10, 10);
+  z-index: 2;
 }
 
 .app-header {
-    margin: 0px 0px;
-    padding: 20px;
-    font-size: 2rem;
-    font-weight: 400;
+  margin: 0px 0px;
+  padding: 20px;
+  font-size: 2rem;
+  font-weight: 400;
 }
 
 i.fa-spotify {
-    color: white;
-    font-size: 2rem;
+  color: white;
+  font-size: 2rem;
 }
 
 .nav-links {
-    position: absolute;
-    right: 1rem;
-    font-size: 1.8rem;
-    color: white;
+  position: absolute;
+  right: 1rem;
+  font-size: 1.8rem;
+  color: white;
 }
 
 .nav-links > a > i:hover {
-    cursor: pointer;
-    color: #38bdf8;
+  cursor: pointer;
+  color: #38bdf8;
 }
