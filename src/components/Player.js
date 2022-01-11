@@ -83,6 +83,7 @@ const Player = ({
 
     return (
         <div id="player">
+            <SongTime />
             <div
                 className="control"
                 id={shuffled ? `active` : null}
@@ -107,7 +108,7 @@ const Player = ({
                 {forwardsSvg}
             </div>
             <Progress />
-            <SongTime />
+            
 
             <audio
                 id="main-track"
