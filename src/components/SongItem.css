@@ -5,6 +5,7 @@
     display: grid;
     grid-template-columns: 10% 50% 30% 10%;
     padding: 10px 5px;
+    transition: all 0.1s ease-in-out;
 }
 
 .song-item:hover {
@@ -41,6 +42,7 @@ a {
 }
 a >svg {
     color: inherit;
+    transition: all 0.1s ease-in-out;
 }
 a > svg:hover {
     color: #eee;

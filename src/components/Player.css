@@ -14,6 +14,7 @@ svg {
     color: #94a3b8;
     font-size: 1.5rem;
     margin: 0px 3rem;
+    transition: all 0.19s ease-in-out;
 }
 #active > svg {
     color: #38bdf8;
@@ -36,6 +37,6 @@ i.fas.fa-pause-circle {
     color: #e2e8f0;
 }
 
-.main-control > i:hover {
-    transform: scale(1.05);
+i:hover, svg:hover {
+    transform: scale(1.3);
 }
