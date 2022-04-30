@@ -3,13 +3,13 @@
     width: 98%;
     height: fit-content;
     display: grid;
-    grid-template-columns: 10% 50% 30% 10%;
+    grid-template-columns: 20% 40% 30% 10%;
     padding: 10px 5px;
     transition: all 0.1s ease-in-out;
 }
 
 .song-item:hover {
-    background-color: #1e293b;
+    background-color: black;
     border-radius: 3px;
     color: #cbd5e1;
     cursor: default;
@@ -49,7 +49,7 @@ a > svg:hover {
 }
 
 .selector > svg:hover {
-    color: #38bdf8;
+    color: yellow;
 }
 
 .small-icon {
@@ -61,4 +61,5 @@ a > svg:hover {
 
 .song-item.header > * > * {
     color: inherit;
+    grid-column: 6/13;
 }

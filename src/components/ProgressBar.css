@@ -7,7 +7,7 @@
 
 /* The slider itself */
 .slider {
-    appearance: none;
+    appearance: slider-horizontal;
     width: 100px; /* Full-width */
     height: 4px; /* Specified height */
     background: #d3d3d3; /* Grey background */
@@ -22,17 +22,17 @@
 
 /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
 .slider::-webkit-slider-thumb {
-    appearance: none;
+    appearance: slider-horizontal;
     width: 8px; /* Set a specific slider handle width */
     height: 8px; /* Slider handle height */
-    background: #2a8eb9; /* Green background */
+    background: yellow; /* Green background */
     border-radius: 9999px;
 }
 
 .slider::-moz-range-thumb {
     width: 4px; /* Set a specific slider handle width */
     height: 4px; /* Slider handle height */
-    background: #2a8eb9; /* Green background */
+    background: yellow; /* Green background */
     border-radius: 9999px;
 }
 

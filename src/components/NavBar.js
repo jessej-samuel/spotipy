@@ -9,11 +9,18 @@ const NavBar = () => {
             <div className="app-header">{metadata.appName}</div>
             <div className="nav-links">
                 <a
-                    href="https://www.github.com/jessej-samuel/spotipy"
+                    href="https://drago.nl"
                     target="_blank"
                     rel="noreferrer"
                 >
-                    <i className="fab fa-github"></i>
+                    <i class="fa fa-globe"></i>
+                </a>
+                <a
+                    href="https://spotify.com"
+                    target="_blank"
+                    rel="noreferrer"
+                >
+                    <i class="fab fa-spotify"></i>
                 </a>
             </div>
         </div>

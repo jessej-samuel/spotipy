@@ -14,9 +14,9 @@ const SongDetail = ({
         <>
           <div className="now-playing">
             <div id="active">
-              <strong>Now playing</strong>
+              <strong>Draait nu</strong>
             </div>
-            <div className="header">{songs[selectedSongId].name}</div>
+            <div className="header">{songs[selectedSongId].author} - {songs[selectedSongId].name}</div>
           </div>
           <div className="album-img">
             {/* <img

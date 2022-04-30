@@ -1,5 +1,5 @@
 #song-list {
-    grid-column: 5/13;
+    grid-column: 6/13;
     grid-row: 3/8;
     overflow-y: auto;
     overflow-x: hidden;

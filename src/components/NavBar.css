@@ -24,14 +24,21 @@ i.fa-spotify {
   font-size: 2rem;
 }
 
+i.fa-globe {
+  color: yellow;
+  font-size: 2rem;
+  margin-right: 1rem;
+}
+
 .nav-links {
   position: absolute;
   right: 1rem;
   font-size: 1.8rem;
   color: white;
+  margin: 1rem;
 }
 
 .nav-links > a > i:hover {
   cursor: pointer;
-  color: #38bdf8;
+  color: yellow;
 }

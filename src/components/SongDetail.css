@@ -1,6 +1,6 @@
 .song-detail {
   grid-row: 2/8;
-  grid-column: 1/5;
+  grid-column: 1/6;
   color: white;
   background-color: #1e293b;
   display: grid;
@@ -10,7 +10,6 @@
     justify-content: center;
     align-items: center; */
   background-size: cover;
-  opacity: 0.7;
   background-color: "black";
   transition: all 0.1s ease-in-out;
 }

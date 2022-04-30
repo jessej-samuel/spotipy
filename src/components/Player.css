@@ -17,7 +17,7 @@ svg {
     transition: all 0.19s ease-in-out;
 }
 #active > svg {
-    color: #38bdf8;
+    color: yellow;
 }
 i.fas.fa-play-circle,
 i.fas.fa-pause-circle {
