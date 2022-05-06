@@ -2,7 +2,7 @@
     {
         "name": "Pilsje",
         "author": "Drago ft. Renee",
-        "url": "https://cdn.discordapp.com/attachments/775740994595323954/775741536591806484/Alan_Walker_-_Fade_NCS_ReleaseMP3_160K.mp3",
+        "url": "https://drago.b-cdn.net/pilsje.mp3",
         "id": 1,
         "links": {
             "images": [
@@ -17,8 +17,8 @@
     },
     {
         "name": "VVD",
-        "author": "Drago",
-        "url": "https://cdn.discordapp.com/attachments/775740994595323954/775741536591806484/Alan_Walker_-_Fade_NCS_ReleaseMP3_160K.mp3",
+        "author": "Drago ft. Gijs",
+        "url": "https://drago.b-cdn.net/vvd.mp3",
         "id": 2,
         "links": {
             "images": [
@@ -33,8 +33,8 @@
     },
     {
         "name": "Leven op de Soos",
-        "author": "Drago",
-        "url": "https://cdn.discordapp.com/attachments/775740994595323954/775741536591806484/Alan_Walker_-_Fade_NCS_ReleaseMP3_160K.mp3",
+        "author": "Drago ft. Reinier",
+        "url": "https://drago.b-cdn.net/levenopdesoos.mp3",
         "id": 3,
         "links": {
             "images": [
@@ -48,25 +48,9 @@
         }
     },
     {
-        "name": "Trek een bak",
-        "author": "Drago",
-        "url": "https://cdn.discordapp.com/attachments/775740994595323954/775741536591806484/Alan_Walker_-_Fade_NCS_ReleaseMP3_160K.mp3",
-        "id": 4,
-        "links": {
-            "images": [
-                {
-                    "url": "/drago-lustrum-cover.png"
-                },
-                {
-                    "url": "/drago-lustrum-cover.png"
-                }
-            ]
-        }
-    },
-    {
-        "name": "Ik ben niet meer een...",
-        "author": "Drago",
-        "url": "https://cdn.discordapp.com/attachments/775740994595323954/775741536591806484/Alan_Walker_-_Fade_NCS_ReleaseMP3_160K.mp3",
+        "name": "Eitje zijn",
+        "author": "Drago ft. Reinier",
+        "url": "https://drago.b-cdn.net/eitje_zijn.mp3",
         "id": 5,
         "links": {
             "images": [
@@ -81,8 +65,8 @@
     },
     {
         "name": "Kansloos",
-        "author": "Drago",
-        "url": "https://cdn.discordapp.com/attachments/775740994595323954/775741536591806484/Alan_Walker_-_Fade_NCS_ReleaseMP3_160K.mp3",
+        "author": "Drago ft. Gijs",
+        "url": "https://drago.b-cdn.net/kansloos.mp3",
         "id": 6,
         "links": {
             "images": [
@@ -94,38 +78,5 @@
                 }
             ]
         }
-    },
-    {
-        "name": "30 Jaar",
-        "author": "Drago",
-        "url": "https://cdn.discordapp.com/attachments/775740994595323954/775741536591806484/Alan_Walker_-_Fade_NCS_ReleaseMP3_160K.mp3",
-        "id": 7,
-        "links": {
-            "images": [
-                {
-                    "url": "/drago-lustrum-cover.png"
-                },
-                {
-                    "url": "/drago-lustrum-cover.png"
-                }
-            ]
-        }
-    },
-    {
-        "name": "Houd je bek en bats me",
-        "author": "Drago ft. Renee",
-        "url": "https://cdn.discordapp.com/attachments/775740994595323954/775741536591806484/Alan_Walker_-_Fade_NCS_ReleaseMP3_160K.mp3",
-        "id": 8,
-        "links": {
-            "images": [
-                {
-                    "url": "/drago-lustrum-cover.png"
-                },
-                {
-                    "url": "/drago-lustrum-cover.png"
-                }
-            ]
-        }
     }
-
 ]
