@@ -42,7 +42,7 @@ const Player = ({
 
     useEffect(() => {
         if (audioRef.current) {
-            audioRef.current.volume = volume / 500;
+            audioRef.current.volume = volume / 100;
         }
     }, [volume]);
 
