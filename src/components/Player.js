@@ -36,9 +36,10 @@ const Player = ({
         document.addEventListener("keyup", spaceUpFunc);
     }, []);
 
-    if (selectedSongId < 0 || selectedSongId > songs.length - 1) {
-        selectSongById(0);
-    }
+    // Wordt niet aangeroepen
+    //if (selectedSongId < 0 || selectedSongId > songs.length - 1) {
+    //    selectSongById(0);
+    //}
 
     useEffect(() => {
         if (audioRef.current) {
@@ -66,6 +67,8 @@ const Player = ({
     const onForwardClick = () => {
         if (selectedSongId < songs.length - 1) {
             selectSongById(selectedSongId + 1);
+        } else {
+            selectSongById(0);
         }
     };
 
@@ -119,7 +122,7 @@ const Player = ({
                     selectSongById(
                         shuffled
                             ? Math.round(Math.random() * songs.length)
-                            : selectedSongId + 1
+                            : selectedSongId == songs.length - 1 ? selectedSongId = 0 :selectedSongId + 1
                     );
                 }}
                 onLoadedMetadata={() => {
