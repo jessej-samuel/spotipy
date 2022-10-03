@@ -35,10 +35,9 @@ Spotipy is deployed at [Vercel](https://vercel.com/) and can be accessed by clic
 
 
 ## Contributors
-- [Jessej Samuel](https://github.com/jessej-samuel)
-- [Ishaan Bedi](https://github.com/ishaanbedi)
-- [Sudhan](https://github.com/SudhanPlayz)
-- [Dani](https://github.com/daniel-jebarson)
+<a href="https://github.com/jessej-samuel/spotipy/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=jessej-samuel/spotipy" />
+</a>
 
 
 ## Contributing
