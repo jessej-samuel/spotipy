@@ -39,7 +39,6 @@ Spotipy is deployed at [Vercel](https://vercel.com/) and can be accessed by clic
   <img src="https://contrib.rocks/image?repo=jessej-samuel/spotipy" />
 </a>
 
-
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
