@@ -5,8 +5,12 @@
     grid-row: 9/10;
 }
 
+.music-timer:hover {
+	height: 12px;
+}
+
 .completed {
-    height: 4px;
+    height: 100%;
     width: 60%;
     background-color: #2a8eb9;  
 }
