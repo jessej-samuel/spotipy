@@ -40,3 +40,8 @@ i.fas.fa-pause-circle {
 i:hover, svg:hover {
     transform: scale(1.3);
 }
+
+.music-timer-wrapper {
+	width: 100%;
+	height: 12px;
+}

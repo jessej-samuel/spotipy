@@ -62,12 +62,25 @@ const Player = ({
         if (selectedSongId > 0) {
             selectSongById(selectedSongId - 1);
         }
-    };
+	};
+	
     const onForwardClick = () => {
         if (selectedSongId < songs.length - 1) {
             selectSongById(selectedSongId + 1);
         }
-    };
+	};
+
+	const onTimeSeek = (e) => {
+		let target = document.getElementsByClassName("music-timer-wrapper")[0];
+
+		let rect = target.getBoundingClientRect();
+		let skipToPercent = (e.clientX - rect.left) / rect.right;
+		audioRef.current.currentTime = audioRef.current.duration * skipToPercent;
+		dispatch({
+			type: "SET_CURRENT_LOCATION",
+			payload: audioRef.current.currentTime,
+		});
+	}
 
     useEffect(() => {
         dispatch({ type: "PLAYER_STATE_SELECTED", payload: 1 });
@@ -82,8 +95,11 @@ const Player = ({
     }, [dispatch]);
 
     return (
-        <div id="player">
-            <SongTime />
+		<div id="player">
+			<div className="music-timer-wrapper" onClick={onTimeSeek}>
+				<SongTime />
+			</div>
+            
             <div
                 className="control"
                 id={shuffled ? `active` : null}
