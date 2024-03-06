@@ -18,7 +18,7 @@
   {
     "name": "Fade-NCS Release",
     "author": "Alan Walker",
-    "url": "https://github.com/jessej-samuel/spotipy/raw/master/src/data/music/spotifydown.com_-_Faded.mp3",
+    "url": "https://github.com/jessej-samuel/spotipy/raw/master/src/data/music/spotifydown.com%20-%20Faded.mp3",
     "id": 1,
     "links": {
       "images": [
@@ -34,7 +34,7 @@
   {
     "name": "She-NCS Release",
     "author": "Andromedik",
-    "url": "https://github.com/jessej-samuel/spotipy/raw/master/src/data/music/spotifydown.com_-_SHE.mp3",
+    "url": "https://github.com/jessej-samuel/spotipy/raw/master/src/data/music/spotifydown.com%20-%20SHE.mp3",
     "id": 2,
     "links": {
       "images": [
@@ -50,7 +50,7 @@
   {
     "name": "About you-NCS Release",
     "author": "Ascence",
-    "url": "https://github.com/jessej-samuel/spotipy/raw/master/src/data/music/spotifydown.com_-_About_You.mp3",
+    "url": "https://github.com/jessej-samuel/spotipy/raw/master/src/data/music/spotifydown.com%20-%20About%20You.mp3",
     "id": 3,
     "links": {
       "images": [
@@ -66,7 +66,7 @@
   {
     "name": "On & On (feat. Daniel Levi) [NCS Release]",
     "author": "Cartoon",
-    "url": "https://github.com/jessej-samuel/spotipy/raw/master/src/data/music/spotifydown.com_-_On__On.mp3",
+    "url": "https://github.com/jessej-samuel/spotipy/raw/master/src/data/music/spotifydown.com%20-%20On%20%26%20On.mp3",
     "id": 4,
     "links": {
       "images": [
